@@ -31,6 +31,10 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import ThreePortfolio from './ThreePortfolio';
+import profileImg from './assets/anuvid_mishra_profile.jpg';
+import internshipCertPdf from './assets/ANUVID_MISHRA_Internship_Certificate_d8a95496.pdf';
+import updatedResumePdf from './assets/Updated_Technical_Resume_13c27fb4.pdf';
+import standardResumePdf from './assets/Anuvid_Resume_ec9c6b41.pdf';
 
 // Interactive CSS 3D Tilt Card Component (inspired by the sample portfolio)
 function TiltCard({
@@ -423,7 +427,7 @@ export default function App() {
 
                   {/* Direct Resume Download Button */}
                   <a
-                    href="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf"
+                    href={updatedResumePdf}
                     download="Anuvid_Mishra_Technical_Resume.pdf"
                     className="inline-flex items-center justify-center gap-1.5 px-4.5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/85 hover:bg-white text-[#171717] border border-white/60 shadow-lg backdrop-blur-xl transition-all cursor-pointer hover:scale-105 whitespace-nowrap"
                     title="Download Official Updated Technical Resume"
@@ -657,60 +661,80 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Profile Card with Enhanced Image and Tilt */}
-              <TiltCard className="flex flex-col gap-4 bg-white/75 backdrop-blur-xl border border-white/80 rounded-3xl p-6 w-full lg:w-[360px] shadow-lg hover:shadow-2xl transition-all">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                  {/* Enhanced Profile Image with Warm Amber Halo */}
-                  <div className="relative group shrink-0">
-                    <div className="absolute -inset-1 bg-gradient-to-tr from-amber-500/40 via-amber-300/30 to-amber-600/40 rounded-2xl blur-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                    <img
-                      src="/assets/aistudio/anuvid_mishra_profile.jpg"
-                      alt="Anuvid Mishra - AI/ML Developer"
-                      className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-2xl object-cover object-top border-2 border-amber-400/60 shadow-md"
-                    />
-                    <div className="absolute bottom-1.5 right-1.5 px-2 py-0.5 rounded-md text-[9px] font-mono font-bold uppercase bg-amber-400 text-[#171717] shadow-sm tracking-wider">
-                      AI / ML
-                    </div>
+              {/* Profile Spotlight Card with Extended Length & Large Portrait */}
+              <TiltCard className="flex flex-col gap-5 bg-white/80 backdrop-blur-2xl border border-white/85 rounded-3xl p-6 sm:p-7 w-full lg:w-[430px] shadow-2xl hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)] transition-all shrink-0">
+                {/* Large Portrait Showcase */}
+                <div className="relative group w-full overflow-hidden rounded-2xl">
+                  <div className="absolute -inset-1 bg-gradient-to-tr from-amber-500/35 via-amber-300/25 to-amber-600/35 rounded-2xl blur-md opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
+                    src={profileImg}
+                    alt="Anuvid Mishra - AI/ML Developer"
+                    className="relative w-full h-72 sm:h-80 rounded-2xl object-cover object-top border-2 border-amber-400/60 shadow-md group-hover:scale-102 transition-transform duration-300"
+                  />
+                  {/* Status Badges */}
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase bg-black/60 backdrop-blur-md text-[#F5F0E6] border border-white/20 flex items-center gap-1.5 shadow">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Open to Roles</span>
                   </div>
+                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-[10px] font-mono font-bold uppercase bg-amber-400 text-[#171717] shadow tracking-wider">
+                    AI / ML Developer
+                  </div>
+                </div>
 
-                  <div className="flex-1 text-center sm:text-left flex flex-col justify-center">
-                    <div className="text-xl font-bold text-[#24211C] leading-tight">Anuvid Mishra</div>
-                    <div className="text-xs text-[#6B5D4B] font-semibold mt-1">AI/ML Developer</div>
-                    <div className="text-xs text-[#24211C] font-mono font-bold mt-2">
-                      Alliance University
+                {/* Identity & Credentials */}
+                <div className="space-y-2">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <h3 className="text-2xl font-bold text-[#24211C] tracking-tight">Anuvid Mishra</h3>
+                    <span className="text-xs font-mono font-bold text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-200">
+                      MCA GenAI
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#6B5D4B] font-semibold">
+                    AI/ML Developer specializing in Generative AI, LLMs & RL
+                  </p>
+
+                  <div className="pt-2 border-t border-black/10 space-y-1.5 text-xs text-[#24211C]">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#6B5D4B] font-medium">Postgrad:</span>
+                      <span className="font-semibold font-mono">Alliance University · 8.15 CGPA</span>
                     </div>
-                    <div className="text-[11px] text-[#6B5D4B] font-mono font-medium">
-                      MCA (GenAI) · 8.15 CGPA
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#6B5D4B] font-medium">Undergrad:</span>
+                      <span className="font-semibold font-mono">ITM University · 8.75 CGPA</span>
                     </div>
-                    <div className="text-[11px] text-[#6B5D4B] font-mono mt-1">
-                      +91 9479074354
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#6B5D4B] font-medium">Contact:</span>
+                      <a href="tel:+919479074354" className="font-semibold font-mono hover:text-amber-700 transition-colors">
+                        +91 9479074354
+                      </a>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-black/10 flex flex-col gap-2">
+                {/* Action Buttons */}
+                <div className="pt-3 border-t border-black/10 flex flex-col gap-2.5">
                   <a
-                    href="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf"
+                    href={updatedResumePdf}
                     download="Anuvid_Mishra_Updated_Technical_Resume.pdf"
-                    className="w-full py-2.5 px-4 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md bg-[#171717] text-[#FFFFFF] hover:bg-black cursor-pointer group"
+                    className="w-full py-3 px-4 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md bg-[#171717] text-[#FFFFFF] hover:bg-black cursor-pointer group"
                   >
                     <Download className="w-3.5 h-3.5 text-[#FFFFFF] transition-transform group-hover:translate-y-0.5" />
                     <span>Download Technical Resume</span>
                   </a>
                   <div className="flex items-center gap-2">
                     <a
-                      href="/assets/aistudio/Anuvid_Resume_ec9c6b41.pdf"
+                      href={standardResumePdf}
                       download="Anuvid_Resume.pdf"
-                      className="flex-1 py-2 px-3 rounded-full text-[11px] font-semibold transition-all flex items-center justify-center gap-1 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm"
+                      className="flex-1 py-2 px-3.5 rounded-full text-xs font-semibold transition-all flex items-center justify-center gap-1.5 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm"
                     >
-                      <Download className="w-3 h-3 text-[#24211C]" />
+                      <Download className="w-3.5 h-3.5 text-[#24211C]" />
                       <span>Standard Resume</span>
                     </a>
                     <button
                       onClick={() => setResumeModalOpen(true)}
-                      className="py-2 px-3.5 rounded-full text-[11px] font-semibold transition-all flex items-center justify-center gap-1 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm cursor-pointer"
+                      className="py-2 px-4 rounded-full text-xs font-semibold transition-all flex items-center justify-center gap-1.5 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm cursor-pointer hover:bg-amber-50"
                     >
-                      <Eye className="w-3 h-3 text-[#24211C]" />
+                      <Eye className="w-3.5 h-3.5 text-[#24211C]" />
                       <span>Preview</span>
                     </button>
                   </div>
@@ -1127,7 +1151,7 @@ export default function App() {
                         <span>Preview Official Certificate</span>
                       </button>
                       <a
-                        href="/assets/aistudio/ANUVID_MISHRA_Internship_Certificate_d8a95496.pdf"
+                        href={internshipCertPdf}
                         download="ANUVID_MISHRA_Python_Full_Stack_Certificate.pdf"
                         className="py-2.5 px-4 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm"
                       >
@@ -1556,7 +1580,7 @@ export default function App() {
                     </div>
                     <div className="flex items-center gap-2 w-full sm:w-auto">
                       <a
-                        href="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf"
+                        href={updatedResumePdf}
                         download="Anuvid_Mishra_Updated_Technical_Resume.pdf"
                         className="flex-1 sm:flex-none px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md bg-[#171717] text-[#FFFFFF] hover:bg-black cursor-pointer"
                       >
@@ -1564,7 +1588,7 @@ export default function App() {
                         <span>Technical Resume</span>
                       </a>
                       <a
-                        href="/assets/aistudio/Anuvid_Resume_ec9c6b41.pdf"
+                        href={standardResumePdf}
                         download="Anuvid_Resume.pdf"
                         className="flex-1 sm:flex-none px-4 py-2 rounded-full text-xs font-semibold transition-all flex items-center justify-center gap-1.5 bg-white/80 hover:bg-white text-[#24211C] border border-black/15 shadow-sm"
                       >
@@ -1632,7 +1656,7 @@ export default function App() {
                     <div className="flex items-center gap-2">
                       {/* Download Technical Resume */}
                       <a
-                        href="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf"
+                        href={updatedResumePdf}
                         download="Anuvid_Mishra_Updated_Technical_Resume.pdf"
                         className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F5F0E6] text-[#171717] hover:bg-white transition-all shadow-sm cursor-pointer"
                         title="Download Official Updated Technical Resume PDF"
@@ -1643,7 +1667,7 @@ export default function App() {
 
                       {/* Download Standard Resume */}
                       <a
-                        href="/assets/aistudio/Anuvid_Resume_ec9c6b41.pdf"
+                        href={standardResumePdf}
                         download="Anuvid_Resume.pdf"
                         className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-[#F5F0E6] border border-white/15 transition-all"
                         title="Download Standard Resume PDF"
@@ -1687,12 +1711,18 @@ export default function App() {
 
                   {/* Tab 1: Interactive PDF Viewer */}
                   {resumeViewTab === 'pdf' ? (
-                    <div className="my-2 flex-1 min-h-[55vh] rounded-2xl overflow-hidden bg-black/40 border border-white/15 relative">
-                      <iframe
-                        src="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf#toolbar=0"
-                        title="Anuvid Mishra Updated Technical Resume"
+                    <div className="my-2 flex-1 min-h-[55vh] rounded-2xl overflow-hidden bg-black/40 border border-white/15 relative flex flex-col">
+                      <object
+                        data={updatedResumePdf}
+                        type="application/pdf"
                         className="w-full h-full min-h-[55vh] rounded-2xl bg-[#1c1813]"
-                      />
+                      >
+                        <iframe
+                          src={`${updatedResumePdf}#toolbar=0`}
+                          title="Anuvid Mishra Updated Technical Resume"
+                          className="w-full h-full min-h-[55vh] rounded-2xl bg-[#1c1813]"
+                        />
+                      </object>
                     </div>
                   ) : (
                     /* Tab 2: Structured Profile View */
@@ -1700,7 +1730,7 @@ export default function App() {
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/10">
                         <div className="flex items-center gap-3">
                           <img
-                            src="/assets/aistudio/anuvid_mishra_profile.jpg"
+                            src={profileImg}
                             alt="Anuvid Mishra"
                             className="w-14 h-18 sm:w-16 sm:h-20 rounded-xl object-cover object-top border-2 border-amber-400/50 shadow-md shrink-0"
                           />
@@ -1806,7 +1836,7 @@ export default function App() {
                     <span className="text-xs text-[#6B5D4B]">Verified for placement drives & internship drives</span>
                     <div className="flex items-center gap-2 w-full sm:w-auto">
                       <a
-                        href="/assets/aistudio/Updated_Technical_Resume_13c27fb4.pdf"
+                        href={updatedResumePdf}
                         download="Anuvid_Mishra_Updated_Technical_Resume.pdf"
                         className="flex-1 sm:flex-none px-4 py-2 rounded-full text-xs font-bold bg-[#F5F0E6] text-[#171717] hover:bg-white transition-all cursor-pointer text-center shadow-md flex items-center justify-center gap-1"
                       >
@@ -1857,7 +1887,7 @@ export default function App() {
 
                     <div className="flex items-center gap-2">
                       <a
-                        href="/assets/aistudio/ANUVID_MISHRA_Internship_Certificate_d8a95496.pdf"
+                        href={internshipCertPdf}
                         target="_blank"
                         rel="noreferrer"
                         className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-[#F5F0E6] transition-all"
@@ -1866,7 +1896,7 @@ export default function App() {
                         <span>Open in Tab</span>
                       </a>
                       <a
-                        href="/assets/aistudio/ANUVID_MISHRA_Internship_Certificate_d8a95496.pdf"
+                        href={internshipCertPdf}
                         download="ANUVID_MISHRA_Python_Full_Stack_Certificate.pdf"
                         className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold bg-[#F5F0E6] text-[#171717] hover:bg-white transition-all shadow-sm"
                       >
@@ -1883,13 +1913,19 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Embedded PDF iframe / View */}
-                  <div className="my-3 flex-1 min-h-[50vh] sm:min-h-[62vh] rounded-2xl overflow-hidden bg-black/40 border border-white/15 relative">
-                    <iframe
-                      src="/assets/aistudio/ANUVID_MISHRA_Internship_Certificate_d8a95496.pdf#toolbar=0"
-                      title="Python Full Stack Internship Certificate"
+                  {/* Embedded PDF object/iframe with direct preview */}
+                  <div className="my-3 flex-1 min-h-[50vh] sm:min-h-[62vh] rounded-2xl overflow-hidden bg-black/40 border border-white/15 relative flex flex-col">
+                    <object
+                      data={internshipCertPdf}
+                      type="application/pdf"
                       className="w-full h-full min-h-[52vh] sm:min-h-[62vh] rounded-2xl bg-[#1c1813]"
-                    />
+                    >
+                      <iframe
+                        src={`${internshipCertPdf}#toolbar=0`}
+                        title="Python Full Stack Internship Certificate"
+                        className="w-full h-full min-h-[52vh] sm:min-h-[62vh] rounded-2xl bg-[#1c1813]"
+                      />
+                    </object>
                   </div>
 
                   {/* Verification Metadata Footnote */}
